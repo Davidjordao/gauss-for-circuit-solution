@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<malloc.h>
 
-float **p,*v;
+float **p,*v,*i;//-----------------------FLAG
 
 void escalona(float linhas, float colunas)
 {
@@ -29,7 +29,26 @@ void escalona(float linhas, float colunas)
     }
   }
     printf("\n\n\n\n");
+    free(aux);//--------------------FLAG
+    free(t);
 }
+
+void resultado(float linhas, float colunas)//------------------FLAG
+{//begin to work in linear system resolution
+    printf("\n\n\n\n\nTESTE FLAGGG\n\n\n\n");
+    i=(float*)malloc(colunas*sizeof(float));
+    int x,y,trade=0;
+        for(x=0;x<linhas;x++)
+        {
+            trade=linhas-x;
+            i[x]=p[trade][trade];
+        }   
+        for(y=0;y<colunas;y++)
+        {   
+            printf("%f  aaaa \n",i[x]);
+        }
+    free(i);
+}//-------------------------------------------------
 
 void imprime (float linhas, float colunas)
 {
@@ -88,7 +107,9 @@ void main()
     preenchimento(linhas,colunas);
     imprime(linhas,colunas);
     escalona(linhas,colunas);
-    imprime(linhas,colunas);    
+    imprime(linhas,colunas);
+    resultado(linhas,colunas);//------------------------FLAG    
     free(p);
+    free(v);//----------------------FLAG
     system("pause");
 }
