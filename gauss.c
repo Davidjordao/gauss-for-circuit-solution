@@ -35,7 +35,6 @@ void escalona(float linhas, float colunas)
 
 void resultado(float linhas, float colunas)//------------------FLAG
 {//begin to work in linear system resolution
-    printf("\n\n\n\n\nTESTE FLAGGG\n\n\n\n");
     i=(float*)malloc(colunas*sizeof(float));
     int x,y,trade=0;
         for(x=0;x<linhas;x++)
